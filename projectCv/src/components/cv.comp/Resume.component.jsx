@@ -266,7 +266,7 @@ class Resume extends React.Component {
             </div>
         </div>
     }
-    getSkillDetails() {
+    getDetails(type) {
         return <div data-react-beautiful-dnd-draggable="1"
             className="sortable-item section-container SortableItem-sibling data-HILT">
             <div id="SECTION_HILT36252a00-1fd4-4e46-a9a2-321ba2e8bf63" className="section rtngSec SECTION_HILT   "
@@ -276,28 +276,31 @@ class Resume extends React.Component {
                         <div className="headingIcon">
                             <svg viewBox="0 0 42 42">
                                 <rect x="0" y="0" height="42" width="42"></rect>
-                                <path transform="translate(5,5)"
+                                {type == 'skill' ? <path transform="translate(5,5)"
                                     d="M31.36 14.293l-3.413-3.413c2.133-.64 3.84-2.773 3.84-5.333C31.787 2.56 29.227 0 26.24 0c-2.347 0-4.48 1.707-5.333 3.84l-3.2-3.2c-.854-.853-2.56-.853-3.414 0L9.6 5.333c-.213.427-.213.854-.213 1.28.213.427.64.64 1.066.427h.64c2.134 0 3.84 1.707 3.84 4.053 0 2.134-1.493 4.054-3.84 4.054-2.133 0-4.053-1.92-4.053-4.054v-.64a1.63 1.63 0 0 0-.427-1.066c-.213-.427-.64-.427-.853 0L.64 14.293c-.853.854-.853 2.347 0 3.414L14.293 31.36c.427.427 1.067.64 1.707.64.64 0 1.28-.213 1.707-.64L31.36 17.707c.853-.854.853-2.56 0-3.414zm-1.493 1.92L16.213 29.867c-.213.213-.426.213-.64 0L2.133 16.213c-.213 0-.213-.426 0-.426l3.414-3.414a5.953 5.953 0 0 0 5.76 4.48c3.2 0 5.76-2.56 5.76-5.973 0-2.773-1.707-5.12-4.267-5.76l2.987-2.987c.213-.213.426-.213.64 0l4.906 4.907c.214.213.854.427 1.067.213.427-.213.64-.64.64-1.066v-.214-.213c0-1.92 1.493-3.413 3.413-3.413 1.92 0 3.414 1.493 3.414 3.413 0 1.92-1.494 3.413-3.414 3.413h-.426c-.427 0-.854.214-1.067.64-.213.427-.213.854.213 1.067l4.694 4.907c.213 0 .213.426 0 .426z">
-                                </path>
+                                </path> :
+                                    <path transform="translate(5,5)"
+                                        d="M11.907 19.287v9.55l5.891-5.023L32 32l-8.186-14.202 6.077-5.891H19.287l-5.085-5.21 2.232-2.232L11.97 0 0 11.969l4.465 4.465 2.233-2.232zm14.822 7.442l-7.442-4.403 3.039-3.04zM24.62 14.016l-10.604 9.55v-5.333l-5.768-5.52 4.465-4.527 5.52 5.83h6.387zm-20.155-.559L2.977 11.97l8.992-8.992 1.488 1.488z">
+                                    </path>}
                             </svg>
                         </div>
-                        <div className="sectiontitle" id="SECTIONNAME_HILT">Programing Skills</div>
+                        <div className="sectiontitle text-capitalize" id="SECTIONNAME_HILT">{type}</div>
                     </div>
                     <div className="">
                         <div className="sortableInner">
                             {
-                                this.props.myCv?.skill?.map((skill, si) => (
+                                !this.props.myCv ? '' : this.props.myCv[type]?.map((obj, oi) => (
                                     <div id="PARAGRAPH_HILT_977e4dd2-dc42-c889-5d32-68fe5b51de37"
-                                        className="paragraph PARAGRAPH_HILT  " key={'skill' + si}>
+                                        className="paragraph PARAGRAPH_HILT  " key={type + oi}>
                                         <div className="clearfix doc-item">
                                             <div className="singlecolumn maincolumn">
                                                 <span className="paddedline" id="FIELD_SKC1">
-                                                    <p>{skill?.name}</p>
+                                                    {obj?.name ? <p> {obj?.name} </p> : <li>{obj}</li>}
                                                 </span>
-                                                <div className="ratingBar" dependency="RATV">
+                                                {obj?.rating ? <div className="ratingBar" dependency="RATV">
                                                     <div className="innerRating" id="FIELD_RATV" type="width"
-                                                        style={{ width: skill.rating + '%' }}></div>
-                                                </div>
+                                                        style={{ width: obj.rating + '%' }}></div>
+                                                </div> : ''}
                                                 <span className="paddedline txtRight" id="FIELD_RATT"></span>
                                             </div>
                                         </div>
@@ -328,7 +331,10 @@ class Resume extends React.Component {
                     </div>
                     <div id="CONTAINER_2" className="right-box">
                         {this.getContactInfo()}
-                        {this.props.myCv?.skill?.length > 0 ? this.getSkillDetails() : ''}
+                        {this.props.myCv?.skill?.length > 0 ? this.getDetails('skill') : ''}
+                        {this.props.myCv?.awards?.length > 0 ? this.getDetails('awards') : ''}
+                        {this.props.myCv?.language?.length > 0 ? this.getDetails('language') : ''}
+
                     </div>
                 </div>
             </div>
