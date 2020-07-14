@@ -17,18 +17,14 @@ class Resume extends React.Component {
             <div id="SECTION_NAMEf01b600e-1e42-419c-a0b4-c73081c7a469"
                 className="section notdraggable SECTION_NAME firstsection  " data-section-cd="NAME">
                 <div className=" doc-item">
-                    <div className="">
-                        <div className="">
-                            <div id="PARAGRAPH_NAME_2336731d-da7d-767e-2541-373362b3f448"
-                                className="paragraph PARAGRAPH_NAME firstparagraph  ">
-                                <div>
-                                    <div className="name word-break">
-                                        <span className="field" id="FIELD_FNAM">{this.props.myCv?.name}</span>
+                    <div id="PARAGRAPH_NAME_2336731d-da7d-767e-2541-373362b3f448"
+                        className="paragraph PARAGRAPH_NAME firstparagraph  ">
+                        <div>
+                            <div className="name word-break">
+                                <span className="field" id="FIELD_FNAM">{this.props.myCv?.name}</span>
 
-                                    </div>
-                                    <div className="resumeTitle" id="FIELD_DCTL">{this.props.myCv?.role}</div>
-                                </div>
                             </div>
+                            <div className="resumeTitle" id="FIELD_DCTL">{this.props.myCv?.role}</div>
                         </div>
                     </div>
                 </div>
@@ -42,24 +38,20 @@ class Resume extends React.Component {
             <div id="SECTION_SUMM0a7cd715-c4a9-4c9b-a74a-a20817f2141b"
                 className="section summary notdraggable SECTION_SUMM   " data-section-cd="SUMM">
                 <div className=" doc-item">
-                    <div className="">
-                        <div className="">
-                            <div id="PARAGRAPH_SUMM_042d140f-77de-7e46-7088-b3b53b073e7a"
-                                className="paragraph PARAGRAPH_SUMM firstparagraph  ">
-                                <div className="clearfix doc-item">
-                                    <div className="resumeTitle" id="FIELD_DCTL">Objective</div>
-                                    <hr />
-                                    <div className="field singlecolumn" id="FIELD_FRFM">
-                                        <p>{this.props.myCv?.objective}</p>
-                                    </div>
-                                </div>
-                                <div className="clearfix doc-item">
-                                    <div className="resumeTitle" id="FIELD_DCTL">Profile</div>
-                                    <hr />
-                                    <div className="field singlecolumn" id="FIELD_FRFM">
-                                        <p>{this.props.myCv?.professionalsummary}</p>
-                                    </div>
-                                </div>
+                    <div id="PARAGRAPH_SUMM_042d140f-77de-7e46-7088-b3b53b073e7a"
+                        className=" PARAGRAPH_SUMM firstparagraph  ">
+                        <div className="clearfix doc-item">
+                            <div className="resumeTitle" id="OBJECTIVE_title">Objective</div>
+                            <hr />
+                            <div className="field singlecolumn" id="OBJECTIVE_Var">
+                                <p>{this.props.myCv?.objective}</p>
+                            </div>
+                        </div>
+                        <div className="clearfix doc-item">
+                            <div className="resumeTitle" id="PROFILE_title">Profile</div>
+                            <hr />
+                            <div className="field singlecolumn" id="PROFILE_var">
+                                <p>{this.props.myCv?.professionalsummary}</p>
                             </div>
                         </div>
                     </div>
@@ -142,7 +134,7 @@ class Resume extends React.Component {
                     <div className="">
                         <div className="">
                             {this.props.myCv?.education?.map((edu, edui) => (
-                                <div id="PARAGRAPH_EDUC_8449bfd6-ab6a-9e38-253c-eb53eccc683d"
+                                <React.Fragment><div id="PARAGRAPH_EDUC_8449bfd6-ab6a-9e38-253c-eb53eccc683d"
                                     className="paragraph datespara PARAGRAPH_EDUC firstparagraph  " key={'edu' + edui}>
                                     <div className="clearfix doc-item">
                                         <div className="singlecolumn">
@@ -165,10 +157,32 @@ class Resume extends React.Component {
                                                     id="FIELD_SCIT">{edu.location}</span>
                                                 <span className="joblocation jobstate" id="FIELD_SSTA"></span>
                                             </div>
+
                                             <span className="field" id="FIELD_FRFM"></span>
                                         </div>
                                     </div>
-                                </div>))}
+                                </div>
+                                    <br />
+                                    <div className="resumeTitle">Assignments And Projects</div>
+                                    <hr />
+                                    {edu?.indivisual_projects ? <div className="">
+                                        <div className="">
+                                            <div id="PARAGRAPH_CUST_0aab775d-4885-de21-4749-d08e2d91a5a0"
+                                                className="PARAGRAPH_CUST firstparagraph  ">
+                                                <div className="clearfix doc-item">
+                                                    <div className="field singlecolumn" id="FIELD_FRFM">
+                                                        <ul>
+                                                            {edu?.indivisual_projects?.map((pro, proI) => (
+                                                                <li key={'pro' + proI}>{pro}</li>
+                                                                // <p key={'pro' + proI}>• {pro}</p>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> : ''}
+                                </React.Fragment>))}
                         </div>
                     </div>
                 </div>
@@ -177,7 +191,7 @@ class Resume extends React.Component {
         </div>
 
     }
-    getProjectList(varName) {
+    getListContent(varName) {
         return <div data-react-beautiful-dnd-draggable="1"
             className="sortable-item section-container SortableItem-sibling data-CUST">
             <div id="SECTION_CUST69e1c699-25e8-d086-841a-88b059d9c21d" className="section SECTION_CUST   "
@@ -192,12 +206,12 @@ class Resume extends React.Component {
                                 </path>
                             </svg>
                         </div>
-                        <div className="sectiontitle" id="SECTIONNAME_CUST">Projects</div>
+                        <div className="sectiontitle" id="SECTIONNAME_CUST">{varName == 'career_summary' ? 'Career Summary' : 'Projects'}</div>
                     </div>
                     <div className="">
                         <div className="">
                             <div id="PARAGRAPH_CUST_0aab775d-4885-de21-4749-d08e2d91a5a0"
-                                className="paragraph PARAGRAPH_CUST firstparagraph  ">
+                                className="PARAGRAPH_CUST firstparagraph  ">
                                 <div className="clearfix doc-item">
                                     <div className="field singlecolumn" id="FIELD_FRFM">
                                         <ul>
@@ -323,21 +337,76 @@ class Resume extends React.Component {
             </div>
         </div>
     }
+    getProjectsList() {
+        return <React.Fragment>
+            <div className="heading">
+                <div className="headingIcon">
+                    <svg viewBox="0 0 42 42">
+                        <rect x="0" y="0" height="42" width="42"></rect>
+                        <path transform="translate(5,5)"
+                            d="M11.907 19.287v9.55l5.891-5.023L32 32l-8.186-14.202 6.077-5.891H19.287l-5.085-5.21 2.232-2.232L11.97 0 0 11.969l4.465 4.465 2.233-2.232zm14.822 7.442l-7.442-4.403 3.039-3.04zM24.62 14.016l-10.604 9.55v-5.333l-5.768-5.52 4.465-4.527 5.52 5.83h6.387zm-20.155-.559L2.977 11.97l8.992-8.992 1.488 1.488z">
+                        </path>
+                    </svg>
+                </div>
+                <div className="sectiontitle" id="SECTIONNAME_CUST">Projects</div>
+            </div>
+            <div>
+                {this.props.myCv?.project_list?.map((project, ind) =>
+                    (<div key={'pro' + ind}>
+                        <span className="paddedline degreeGap txtBold resumeTitle" dependency="DGRE|STUY">
+                            <span className="degree" id="FIELD_DGRE">Project {ind + 1}</span><span
+                                dependency="DGRE+STUY">: </span>
+                            <span className="programline" id="FIELD_STUY">{project.projectName}</span>
+                        </span>
+                        <div className="paddedline txtItl" dependency="SCIT|SSTA|SCHO">
+                            <span className="companyname" id="FIELD_SCHO">client: {project.client}</span><span
+                                dependency="SCHO+SSTA|SCIT"> - </span>
+                            <span className="joblocation jobcity"
+                                id="FIELD_SCIT">technology: {project.technology}</span><span
+                                    dependency="SCHO+SSTA|SCIT"> - </span>
+                            <span className="joblocation jobcity"
+                                id="FIELD_SCIT">duration: {project.duration}</span>
+                            <span className="joblocation jobstate" id="FIELD_SSTA"></span>
+                        </div>
+                        <hr />
+                        <span className="paddedline degreeGap txtBold" dependency="DGRE|STUY">
+                            <span className="programline" id="FIELD_STUY">description</span>
+                        </span>
+                        <div className="paddedline txtItl" dependency="SCIT|SSTA|SCHO">
+                            <p>{project.description}</p>
+                        </div>
+                        <span className="paddedline degreeGap txtBold" dependency="DGRE|STUY">
+                            <span className="programline" id="FIELD_STUY">Project Responsibilities:</span>
+                        </span>
+                        <div id="PARAGRAPH_CUST_0aab775d-4885-de21-4749-d08e2d91a5a0"
+                            className="left-box PARAGRAPH_CUST firstparagraph  ">
+                            <div className="clearfix doc-item paragraph">
+                                <div className="field singlecolumn" id="FIELD_FRFM">
+                                    <ul>
+                                        {project?.responsibility?.map((res, resInd) => (<li key={'pro' + resInd}>{res}</li>))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>))}
+            </div>
+        </React.Fragment>
+    }
     getCvTemplate() {
         return (<React.Fragment>
-            <div id="document" className="document fontsize fontface vmargins hmargins pagesize skn-trz9 TRZ9  ZTY">
+            <div id="document" className="document fontsize fontface vmargins hmargins pagesize skn-trz9 TRZ9  ZTY text-capitalize">
                 <div id="CONTAINER_PARENT_0" className="topsection">
                     <div id="CONTAINER_0">
                         {this.getNameSection()}
-                        {this.getCvSummary()}
+                        {/* {this.getCvSummary()} */}
                     </div>
                 </div>
                 <div id="CONTAINER_PARENT_1" className="parentContainer">
                     <div id="CONTAINER_1" className="left-box">
+                        {this.getCvSummary()}
                         {this.props.myCv?.workHistory?.length > 0 ? this.getWorkHistory() : ''}
-                        {this.props.myCv?.career_summary?.length > 0 ? this.getProjectList('career_summary') : ''}
-                        {this.props.myCv?.education?.length > 0 ? this.getEducationDetails() : ''}
-                        {this.props.myCv?.indivisual_projects?.length > 0 ? this.getProjectList('indivisual_projects') : ''}
+                        {this.props.myCv?.career_summary?.length > 0 ? this.getListContent('career_summary') : ''}
                     </div>
                     <div id="CONTAINER_2" className="right-box">
                         {this.getContactInfo()}
@@ -346,6 +415,10 @@ class Resume extends React.Component {
                         {this.props.myCv?.language?.length > 0 ? this.getDetails('language') : ''}
 
                     </div>
+                </div>
+                <div className="parentContainer left-box">
+                    {this.props.myCv?.project_list?.length > 0 ? this.getProjectsList() : ''}
+                    {this.props.myCv?.education?.length > 0 ? this.getEducationDetails() : ''}
                 </div>
             </div>
         </React.Fragment>)

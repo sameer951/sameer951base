@@ -55,19 +55,84 @@
         "Experience in writing widgets for Angular2+ & ReactJS.",
         "Knowledge in Agile Methodology (JIRA)."
     ],
-    "indivisual_projects": [
-        "Dynamic College WebSite Using Angular, Java and MySQL as Final Semister Major Project, It Includes Library Management, Hostel Bed Allotment, Notice And Event Management.",
-        "Pure Javadcript and Jquery Based Invoice Generation And Printing .",
-        "Solved 250 Mathmetical Problem Using Java From projecteuler.net (With team Of 5Memb) As Minor Project"
-    ],
     "education": [
         {
+            "indivisual_projects": [
+                "Dynamic College WebSite Using Angular, Java and MySQL as Final Semister Major Project, It Includes Library Management, Hostel Bed Allotment, Notice And Event Management.",
+                "Pure Javadcript and Jquery Based Invoice Generation And Printing .",
+                "Solved 250 Mathmetical Problem Using Java From projecteuler.net (With team Of 5Memb) As Minor Project"
+            ],
             "college_name": "KMBB CET (BPUT)",
             "location": "Daleiput,Khordha",
             "degree": "Bachelor of Technology",
             "field": "Computer Science and Engineering",
             "start_date": "08/2013",
             "end_date": "05/2017"
+        }
+    ],
+    "project_list": [
+        {
+            "projectName": "HS Consumer App",
+            "client": "Healthsignz Pvt Ltd.",
+            "technology": "ReactJS, Redux",
+            "tools": " ",
+            "duration": "1 year",
+            "description": "HS Consumer App is a front-end delivery interface for consumer to get various services like Booking Doctor Appoinments, Slot booking for Diagnostics testing by walk-in or home collection, CloudLocker for Health Reports, diet  advice, physical advice and symptom based advice based on users PHR and purchase various Health Packages and purchase Medicines based on advice.",
+            "responsibility": [
+                "Base Project Structure And Functionality Implementation",
+                "Creating Util Components like pagination, search component, Map Utils .",
+                "Implemented Location Module which checks user's location for appropriate doctor and diagnostic slot bookings and page wise dynamic location behaviors.",
+                "Implemented Server Side Rendered Page Generation Using NextJS To make SEO Friendly Pages",
+                "Impemented Doctor Booking and HealthLocker Feature .",
+                "Involved in Bug fixing, Improvements and Production Issue Resolving."
+            ]
+        },
+        {
+            "projectName": "HS Corporate App",
+            "client": "Healthsignz Pvt Ltd.",
+            "technology": "Angular 6",
+            "tools": " ",
+            "duration": "8 Months",
+            "description": "HS Corporate App is a front-end delivery interface for Corporates to Buy Packages For Their Employees, Register Their Employee and check Their Employee's Health Overall To Provide Better Health Services.",
+            "responsibility": [
+                "Base Project Structure And Functionality Implementation.",
+                "Creating Util Components like Responsive Table, Chart.js Utils, pagination, search component, Map Utils .",
+                "Implemented Reactive Form Modules to Achieve Functionality for Easy Validation .",
+                "Implemented ChartJS to Analyzing Haelth Status Of Employees.",
+                "Impemented Whole Corporate HR And Administration Modules with code optimizations and component reutilazation .",
+                "Involved in Bug fixing, Improvements and Production Issue Resolving."
+            ]
+        },
+        {
+            "projectName": "HS Service Provider's App",
+            "client": "Healthsignz Pvt Ltd.",
+            "technology": "Angular 4+",
+            "tools": " ",
+            "duration": "2 years",
+            "description": "HS Poz and Doctor app is a front-end delivery interface for HS partners and doctors to provide various services to people like onboarding and sell of pharmacy products based on doctor advice, diagnostic services, wellness services and creation and controling of HealthCare Centres and creating Employees for that who will involve in service provide, doctor schedule and lots more..",
+            "responsibility": [
+                "Finacial Migration By Refactoring Code To Achieve Security Implementation",
+                "Creating and improving Util Components like pagination, search component, Map Utils .",
+                "Involved In Migration Code Angular 4 to Angular latest",
+                "Implemented and Improvised Google Maps Features like HeatMap ,Autocomplete ,Adding Layers To Map",
+                "Involved In Pharmacy and Product Management with calculations for walk-in , Home Order and Coupon Apply.",
+                "Involved In Creation and Assigning functionalities to Employees for providing services",
+                "Involved in Bug fixing, Improvements and Production Issue Resolving."
+            ]
+        },
+        {
+            "projectName": "HS Eureka App",
+            "client": "Healthsignz Pvt Ltd.",
+            "technology": "Angular 4",
+            "tools": " ",
+            "duration": "2 years",
+            "description": "HS Eureka App is a front-end delivery interface for Administration Team to Analyze All Services, Consumer Activities, Revenue Analyzation, Assigning Targets to Employees for Specify Areas to Expand And Growth in services for consumers.",
+            "responsibility": [
+                "Chart.js For Implementing Analyzing Various Statics.",
+                "Impoving Cluster Management, Employee Management.",
+                "Involved In Finance Security Module Migration",
+                "Bug Fixes, Mantainance and Optimizations of code."
+            ]
         }
     ],
     "skill": [
@@ -88,19 +153,6 @@
         },
         {
             "name": "Core Java"
-        },
-        {
-            "name": "Nodejs (Basics)"
-        },
-        {
-            "name": "MongoDB (Basics)"
-        },
-        {
-            "name": "SQL (Basics)"
-        },
-        {
-            "name": " ",
-            "rating": null
         }
     ],
     "awards": [
