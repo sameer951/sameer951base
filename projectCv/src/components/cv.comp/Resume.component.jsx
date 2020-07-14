@@ -209,7 +209,7 @@ class Resume extends React.Component {
     }
     getContactInfo() {
         let contactInfo = this.props.myCv?.contact_info;
-        return <div data-react-beautiful-dnd-draggable="1"
+        return contactInfo ? <div data-react-beautiful-dnd-draggable="1"
             className="sortable-item section-container SortableItem-sibling data-CNTC">
             <div id="SECTION_CNTCf4d85991-710d-40ac-b953-94fc91f25e9d" className="section SECTION_CNTC notdraggable   "
                 data-section-cd="CNTC">
@@ -240,7 +240,7 @@ class Resume extends React.Component {
                                             </div>
                                             <div className="txtBold mt5" dependency="HPHN|CPHN">Phone </div>
                                             <div dependency="HPHN">
-                                                <span className="field" id="FIELD_HPHN">{contactInfo?.phone}</span>
+                                                <span className="field" id="FIELD_HPHN"><a href={"tel:" + contactInfo?.phone}>{contactInfo?.phone}</a></span>
                                             </div>
 
                                             <div className="txtBold mt5" dependency="EMAI">E-mail </div>
@@ -264,7 +264,7 @@ class Resume extends React.Component {
                 </div>
                 <div className="doc-overlay section-overlay" style={{ left: -27 + 'px', right: -27 + 'px' }}><span>&nbsp;</span></div>
             </div>
-        </div>
+        </div> : '';
     }
     getDetails(type) {
         return <div data-react-beautiful-dnd-draggable="1"

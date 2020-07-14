@@ -12,6 +12,11 @@
                 "name": "LinkedIn",
                 "link": "https://in.linkedin.com/in/jyotikantanadi",
                 "link_name": "in.linkedin.com/in/ jyotikantanadi"
+            },
+            {
+                "name": "Skype",
+                "link": "skype:Jyotikanta9010? userinfo",
+                "link_name": "Jyotikanta9010"
             }
         ]
     },
@@ -53,41 +58,16 @@
         }
     ],
     "skill": [
-        {
-            "name": "Javascript",
-            "rating": 90
-        },
-        {
-            "name": "Angular",
-            "rating": 85
-        },
-        {
-            "name": "ReactJs",
-            "rating": 80
-        },
-        {
-            "name": "MongoDB",
-            "rating": 70
-        },
-        {
-            "name": "SQL",
-            "rating": 70
-        },
-        {
-            "name": "Core Java",
-            "rating": 70
-        },
-        {
-            "name": "Nodejs",
-            "rating": 40
-        },
-        {
-            "name": "HTML",
-            "rating": 80
-        },
-        {
-            "name": "CSS",
-            "rating": 60
-        }
-    ]
+        { "name": "Javascript", "rating": 90 },
+        { "name": "Angular", "rating": 85},
+        { "name": "ReactJs", "rating": 80},
+        { "name": "HTML", "rating": 80},
+        { "name": "CSS", "rating": 60},
+        { "name": "Core Java"},
+        { "name": "Nodejs (Basics)"},  
+        { "name": "MongoDB (Basics)"},
+        { "name": "SQL (Basics)"}     
+    ],
+    "awards": ["Awarded Star-Of-The-Month Employee","Winner in C Debugging On Graduation Tech Fest"],
+    "language":["English","Hindi","Odia"]
 }
