@@ -47,6 +47,15 @@ class Resume extends React.Component {
                             <div id="PARAGRAPH_SUMM_042d140f-77de-7e46-7088-b3b53b073e7a"
                                 className="paragraph PARAGRAPH_SUMM firstparagraph  ">
                                 <div className="clearfix doc-item">
+                                    <div className="resumeTitle" id="FIELD_DCTL">Objective</div>
+                                    <hr />
+                                    <div className="field singlecolumn" id="FIELD_FRFM">
+                                        <p>{this.props.myCv?.objective}</p>
+                                    </div>
+                                </div>
+                                <div className="clearfix doc-item">
+                                    <div className="resumeTitle" id="FIELD_DCTL">Profile</div>
+                                    <hr />
                                     <div className="field singlecolumn" id="FIELD_FRFM">
                                         <p>{this.props.myCv?.professionalsummary}</p>
                                     </div>
@@ -99,9 +108,9 @@ class Resume extends React.Component {
                                                 <span className="jobstate" id="FIELD_JSTA">{ele.state}</span>
                                             </span>
                                             <span className="jobline" id="FIELD_JDES">
-                                                <ul>
+                                                {ele.isBulletPoint && ele.isBulletPoint == 'true' ? <ul>
                                                     {ele.responsibiltyList?.map((des, jobI) => (<li key={'job' + jobI + wi}>{des}</li>))}
-                                                </ul>
+                                                </ul> : ''}
                                             </span>
                                         </div>
                                     </div>
@@ -168,7 +177,7 @@ class Resume extends React.Component {
         </div>
 
     }
-    getProjectList() {
+    getProjectList(varName) {
         return <div data-react-beautiful-dnd-draggable="1"
             className="sortable-item section-container SortableItem-sibling data-CUST">
             <div id="SECTION_CUST69e1c699-25e8-d086-841a-88b059d9c21d" className="section SECTION_CUST   "
@@ -192,7 +201,7 @@ class Resume extends React.Component {
                                 <div className="clearfix doc-item">
                                     <div className="field singlecolumn" id="FIELD_FRFM">
                                         <ul>
-                                            {this.props.myCv?.indivisual_projects?.map((pro, proI) => (
+                                            {this.props.myCv && this.props.myCv[varName]?.map((pro, proI) => (
                                                 <li key={'pro' + proI}>{pro}</li>
                                                 // <p key={'pro' + proI}>• {pro}</p>
                                             ))}
@@ -326,8 +335,9 @@ class Resume extends React.Component {
                 <div id="CONTAINER_PARENT_1" className="parentContainer">
                     <div id="CONTAINER_1" className="left-box">
                         {this.props.myCv?.workHistory?.length > 0 ? this.getWorkHistory() : ''}
+                        {this.props.myCv?.career_summary?.length > 0 ? this.getProjectList('career_summary') : ''}
                         {this.props.myCv?.education?.length > 0 ? this.getEducationDetails() : ''}
-                        {this.props.myCv?.indivisual_projects?.length > 0 ? this.getProjectList() : ''}
+                        {this.props.myCv?.indivisual_projects?.length > 0 ? this.getProjectList('indivisual_projects') : ''}
                     </div>
                     <div id="CONTAINER_2" className="right-box">
                         {this.getContactInfo()}

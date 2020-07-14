@@ -1,8 +1,11 @@
 {
     "name": "Jyotikanta Nadi",
     "role": "Software Engineer",
+    "objective": "To work in a challenging environment, where I can utilize my potential and innovative competence to achieve personal and professional goals. Adaptive and willing to work with emerging technologies.",
     "xsummary": "Innovative Web Developer with 2 years of experience in Angular and Reactjs. Demonstrated talent for front and back-end web development to optimize online presence. Seasoned expert in languages such as HTML, BootStrap,JQuery,D3Js as well as scripting languages Typescript,ECMAScript and JavaScript.",
-    "professionalsummary": "Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including AngularJS, ReactJS,NodeJS, HTML5, JavaScript, CSS, MongoDB. Strong background in project management. ",
+    "xprofessionalsummary": "Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including AngularJS, ReactJS,NodeJS, HTML5, JavaScript, CSS, MongoDB. Strong background in project management. ",
+    "professionalsummary": "A dedicated professional with 2+ year experience. Specializes in Developing and Maintaining Angular2+/ReactJS/NextJS projects from scratch following industry standards with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, Typescript and Java. Strong background in project management. ",
+    "yprofessionalsummary": "A dedicated professional with 2+ year experience. Specializes in Developing and Maintaining Angular2+/ReactJS/NextJS projects from scratch following industry standards. Now seeking to contribute my experience, skills and expertise to Development Team for social welfare.",
     "contact_info": {
         "address": "Bangalore, KA, 560068",
         "phone": 8270820320,
@@ -22,6 +25,7 @@
     },
     "workHistory": [
         {
+            "isBulletPoint": "false",
             "employer": "Healthsignz Pvt. Ltd",
             "job_title": "Software Engineer Trainee",
             "city": "Bangalore",
@@ -42,6 +46,15 @@
             ]
         }
     ],
+    "career_summary": [
+        "Having 2+ year of experience as Software Developer",
+        "Hands on Experience in Developing and maintaining Angular2+/ReactJS/NextJS projects from scratch following industry standards.",
+        "Hands on Experience in Developing User Friendly and Mobile-First UI using HTML5, CSS3, BootStrap4, JQuery and JavaScript.",
+        "Experience in Developing Responsive Design using BootStrap4 and materialize.",
+        "Experience in Integrating 3rd Party Plugins and Library Like Chart.js, D3JS, Google maps",
+        "Experience in writing widgets for Angular2+ & ReactJS.",
+        "Knowledge in Agile Methodology (JIRA)."
+    ],
     "indivisual_projects": [
         "Dynamic College WebSite Using Angular, Java and MySQL as Final Semister Major Project, It Includes Library Management, Hostel Bed Allotment, Notice And Event Management.",
         "Pure Javadcript and Jquery Based Invoice Generation And Printing .",
@@ -58,16 +71,45 @@
         }
     ],
     "skill": [
-        { "name": "Javascript", "rating": 90 },
-        { "name": "Angular", "rating": 85},
-        { "name": "ReactJs", "rating": 80},
-        { "name": "HTML", "rating": 80},
-        { "name": "CSS", "rating": 60},
-        { "name": "Core Java"},
-        { "name": "Nodejs (Basics)"},  
-        { "name": "MongoDB (Basics)"},
-        { "name": "SQL (Basics)"}     
+        {
+            "name": "Javascript"
+        },
+        {
+            "name": "Angular"
+        },
+        {
+            "name": "ReactJs"
+        },
+        {
+            "name": "HTML"
+        },
+        {
+            "name": "CSS"
+        },
+        {
+            "name": "Core Java"
+        },
+        {
+            "name": "Nodejs (Basics)"
+        },
+        {
+            "name": "MongoDB (Basics)"
+        },
+        {
+            "name": "SQL (Basics)"
+        },
+        {
+            "name": " ",
+            "rating": null
+        }
     ],
-    "awards": ["Awarded Star-Of-The-Month Employee","Winner in C Debugging On Graduation Tech Fest"],
-    "language":["English","Hindi","Odia"]
+    "awards": [
+        "Awarded Star-Of-The-Month Employee",
+        "Winner in C Debugging On Graduation Tech Fest"
+    ],
+    "language": [
+        "English",
+        "Hindi",
+        "Odia"
+    ]
 }
