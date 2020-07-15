@@ -2,12 +2,8 @@ import React from 'react';
 import Axios from 'axios';
 import { ResumeComponent } from '../components/cv.comp/Resume.component';
 class Resume extends React.Component {
-    cvURL =
-        //  "assets"
-        "https://files.techknocker.xyz/basefiles"
-    // "https://sameer951.github.io/sameer951base/basefiles/mycv.json";
-    // "assets/mycv.json"
-    // "https://firebasestorage.googleapis.com/v0/b/myresume-5f587.appspot.com/o/mycv.json?alt=media";
+    cvURL = "assets";
+    // "https://files.techknocker.xyz/basefiles"
     state = { myCv: {} }
     componentDidMount() {
         Axios.get(this.cvURL + '/mycv.json').then(res => {

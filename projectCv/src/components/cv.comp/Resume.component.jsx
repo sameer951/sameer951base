@@ -407,6 +407,9 @@ class Resume extends React.Component {
     }
     getCvTemplate() {
         return (<React.Fragment>
+            <div className="ml-5 float-right" > <a className="btn btn-outline-primary" href="assets/mycv.pdf" download>
+                Download CV<span><i class="fa fa-download" aria-hidden="true"></i></span>
+            </a></div>
             <div id="document" className="document fontsize fontface vmargins hmargins pagesize skn-trz9 TRZ9  ZTY text-capitalize">
                 <div id="CONTAINER_PARENT_0" className="topsection">
                     <div id="CONTAINER_0">
