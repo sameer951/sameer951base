@@ -1,6 +1,8 @@
 import React from 'react';
 
 class Resume extends React.Component {
+
+    state = {};
     componentDidMount() { }
     render() {
         return (<React.Fragment>
@@ -353,41 +355,50 @@ class Resume extends React.Component {
             <div>
                 {this.props.myCv?.project_list?.map((project, ind) =>
                     (<div key={'pro' + ind}>
-                        <span className="paddedline degreeGap txtBold resumeTitle" dependency="DGRE|STUY">
-                            <span className="degree" id="FIELD_DGRE">Project {ind + 1}</span><span
-                                dependency="DGRE+STUY">: </span>
-                            <span className="programline" id="FIELD_STUY">{project.projectName}</span>
-                        </span>
-                        <div className="paddedline txtItl" dependency="SCIT|SSTA|SCHO">
-                            <span className="companyname" id="FIELD_SCHO">client: {project.client}</span><span
-                                dependency="SCHO+SSTA|SCIT"> - </span>
-                            <span className="joblocation jobcity"
-                                id="FIELD_SCIT">technology: {project.technology}</span><span
+                        <div onClick={() => this.setState({ ...this.state, activePro: this.state.activePro == 'pro' + ind ? '' : 'pro' + ind })} className="cursor-pointer">
+                            <span className="paddedline degreeGap txtBold resumeTitle" dependency="DGRE|STUY">
+                                <span className="degree" id="FIELD_DGRE">Project {ind + 1}</span><span
+                                    dependency="DGRE+STUY">: </span>
+                                <span className="programline" id="FIELD_STUY">{project.projectName}</span>
+                            </span>
+                            <div className="paddedline txtItl" dependency="SCIT|SSTA|SCHO">
+                                <span className="companyname" id="FIELD_SCHO">client: {project.client}</span><span
                                     dependency="SCHO+SSTA|SCIT"> - </span>
-                            <span className="joblocation jobcity"
-                                id="FIELD_SCIT">duration: {project.duration}</span>
-                            <span className="joblocation jobstate" id="FIELD_SSTA"></span>
-                        </div>
-                        <hr />
-                        <span className="paddedline degreeGap txtBold" dependency="DGRE|STUY">
-                            <span className="programline" id="FIELD_STUY">description</span>
-                        </span>
-                        <div className="paddedline txtItl" dependency="SCIT|SSTA|SCHO">
-                            <p>{project.description}</p>
-                        </div>
-                        <span className="paddedline degreeGap txtBold" dependency="DGRE|STUY">
-                            <span className="programline" id="FIELD_STUY">Project Responsibilities:</span>
-                        </span>
-                        <div id="PARAGRAPH_CUST_0aab775d-4885-de21-4749-d08e2d91a5a0"
-                            className="left-box PARAGRAPH_CUST firstparagraph  ">
-                            <div className="clearfix doc-item paragraph">
-                                <div className="field singlecolumn" id="FIELD_FRFM">
-                                    <ul>
-                                        {project?.responsibility?.map((res, resInd) => (<li key={'pro' + resInd}>{res}</li>))}
-                                    </ul>
-                                </div>
+                                <span className="joblocation jobcity"
+                                    id="FIELD_SCIT">technology: {project.technology}</span><span
+                                        dependency="SCHO+SSTA|SCIT"> - </span>
+                                <span className="joblocation jobcity"
+                                    id="FIELD_SCIT">duration: {project.duration}</span>
+                                <span className="joblocation jobstate" id="FIELD_SSTA"></span>
+                                <span style={{ marginRight: 'auto' }}>{this.state.activePro == 'pro' + ind ? <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    : <i class="fa fa-chevron-right" aria-hidden="true"></i>}
+                                    {/* position: 'absolute', */}
+                                </span>
                             </div>
                         </div>
+                        {/* <hr /> */}
+                        {this.state.activePro == 'pro' + ind ? <div>
+                            <span className="paddedline degreeGap txtBold" dependency="DGRE|STUY">
+                                <span className="programline" id="FIELD_STUY">description</span>
+                            </span>
+                            <div className="paddedline txtItl" dependency="SCIT|SSTA|SCHO">
+                                <p>{project.description}</p>
+                            </div>
+                            <span className="paddedline degreeGap txtBold" dependency="DGRE|STUY">
+                                <span className="programline" id="FIELD_STUY">Project Responsibilities:</span>
+                            </span>
+                            <div id="PARAGRAPH_CUST_0aab775d-4885-de21-4749-d08e2d91a5a0"
+                                className="left-box PARAGRAPH_CUST firstparagraph  ">
+                                <div className="clearfix doc-item paragraph">
+                                    <div className="field singlecolumn" id="FIELD_FRFM">
+                                        <ul>
+                                            {project?.responsibility?.map((res, resInd) => (<li key={'pro' + resInd}>{res}</li>))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> : ''}
                         <hr />
                     </div>))}
             </div>
@@ -430,6 +441,9 @@ class Resume extends React.Component {
             a:hover{text-decoration: none;}
             li{ line-height: 30px;}
             p{ line-height: 30px;}
+            .cursor-pointer{
+                cursor: pointer;
+              }
             /*Font support for MAC*/
         @font-face{font-family:'Century Gothic';font-weight:normal;font-style:normal;src:local('Century Gothic'),url('/blobcontent/zty/fonts/CenturyGothic.ttf') format('truetype')}
         @font-face{font-family:'Century Gothic';font-weight:bold;font-style:normal;src:local('Century Gothic Bold'),url('/blobcontent/zty/fonts/CenturyGothicBold.ttf') format('truetype')}
