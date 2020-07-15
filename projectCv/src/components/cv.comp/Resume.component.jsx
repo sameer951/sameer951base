@@ -374,6 +374,7 @@ class Resume extends React.Component {
                                     : <i class="fa fa-chevron-right" aria-hidden="true"></i>}
                                     {/* position: 'absolute', */}
                                 </span>
+                                {this.state.activePro == 'pro' + ind ? <hr /> : ''}
                             </div>
                         </div>
                         {/* <hr /> */}
